@@ -237,8 +237,9 @@ class HomeState extends State<Home> {
         body: _currentIndex == 2 ? const ProfileTab() : pages[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
-          selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.grey.shade700,
+          selectedItemColor: Colors.white, // Couleur des éléments sélectionnés
+          unselectedItemColor: Colors.grey.shade400, // Couleur des éléments non sélectionnés
+          backgroundColor: Colors.black, // Fond de la barre
           type: BottomNavigationBarType.fixed,
           showSelectedLabels: false,
           showUnselectedLabels: false,

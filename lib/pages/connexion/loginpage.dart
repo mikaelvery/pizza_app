@@ -136,26 +136,32 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 16.0),
                 ElevatedButton(
                   onPressed: () async {
-                    bool success =
-                        (await authProvider.signInWithEmailAndPassword(
+                    bool success = await authProvider.signInWithEmailAndPassword(
                       _emailController.text,
                       _passwordController.text,
-                    ));
+                    );
+
                     if (success) {
-                      // ignore: use_build_context_synchronously
+                      // Connexion réussie
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content:
-                              Text('Bienvenue ${authProvider.user?.email}'),
+                          content: Text('Bienvenue ${authProvider.user?.email}'),
                           duration: const Duration(seconds: 2),
                         ),
                       );
                       await Future.delayed(const Duration(seconds: 2));
-                      // ignore: use_build_context_synchronously
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                           builder: (context) => const Home(),
+                        ),
+                      );
+                    } else {
+                      // Affichez une erreur si la connexion échoue
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Erreur de connexion, veuillez vérifier vos identifiants.'),
+                          duration: Duration(seconds: 3),
                         ),
                       );
                     }

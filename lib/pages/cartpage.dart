@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:pizzaapp/models/paiements/cart.dart';
 import 'package:firebase_auth/firebase_auth.dart' as authprovider;
@@ -155,40 +154,40 @@ class CartPageState extends State<CartPage> {
                   ],
                 ),
                 const SizedBox(height: 20),
-                CreditCardForm(
-                  formKey: formKey,
-                  onCreditCardModelChange: (CreditCardModel data) {},
-                  obscureCvv: true,
-                  obscureNumber: true,
-                  isHolderNameVisible: true,
-                  isCardNumberVisible: true,
-                  isExpiryDateVisible: true,
-                  enableCvv: true,
-                  cvvValidationMessage: 'Veuillez entrer un CVV valide',
-                  dateValidationMessage: 'Veuillez entrer une date valide',
-                  numberValidationMessage: 'Veuillez entrer un numéro valide',
-                  cardHolderValidator: (String? cardHolderName) {
-                    return null;
-                  },
-                  cvvValidator: (String? cvv) {
-                    return null;
-                  },
-                  cardNumberValidator: (String? cardNumber) {
-                    return null;
-                  },
-                  expiryDateValidator: (String? expiryDate) {
-                    return null;
-                  },
-                  onFormComplete: () {
-                    if (formKey.currentState!.validate()) {
-                      placeOrder(user);
-                    }
-                  },
-                  cardNumber: '4978 9430 9804 7925 6301',
-                  expiryDate: '11/25',
-                  cardHolderName: 'Mr very mikael',
-                  cvvCode: '123',
-                ),
+                // CreditCardForm(
+                //   formKey: formKey,
+                //   onCreditCardModelChange: (CreditCardModel data) {},
+                //   obscureCvv: true,
+                //   obscureNumber: true,
+                //   isHolderNameVisible: true,
+                //   isCardNumberVisible: true,
+                //   isExpiryDateVisible: true,
+                //   enableCvv: true,
+                //   cvvValidationMessage: 'Veuillez entrer un CVV valide',
+                //   dateValidationMessage: 'Veuillez entrer une date valide',
+                //   numberValidationMessage: 'Veuillez entrer un numéro valide',
+                //   cardHolderValidator: (String? cardHolderName) {
+                //     return null;
+                //   },
+                //   cvvValidator: (String? cvv) {
+                //     return null;
+                //   },
+                //   cardNumberValidator: (String? cardNumber) {
+                //     return null;
+                //   },
+                //   expiryDateValidator: (String? expiryDate) {
+                //     return null;
+                //   },
+                //   onFormComplete: () {
+                //     if (formKey.currentState!.validate()) {
+                //       placeOrder(user);
+                //     }
+                //   },
+                //   cardNumber: '4978 9430 9804 7925 6301',
+                //   expiryDate: '11/25',
+                //   cardHolderName: 'Mr very mikael',
+                //   cvvCode: '123',
+                // ),
               ],
             ),
           ),
